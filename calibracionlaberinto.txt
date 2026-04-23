@@ -1,0 +1,133 @@
+RECORRIDO EN LABERINTO - Apr 19 2026
+Canal 0=Oeste  Canal 1=Sur  Canal 2=Este  Canal 3=Norte
+Movimiento real del robot omnidireccional (sin girar chasis)
+=============================================================
+
+[PASO 1 - INICIO: Norte y Sur libres, prioriza Norte]
+Tiempo: 15:36
+N: 690,725,700,699,712,690,686,695,691,708,683,686,691,688,691
+E: 127,128,126,129,127,132,129,125,129,128,129,127,129,128,125
+S:  82, 84, 83, 82, 84, 85, 84, 81, 83, 83, 83, 82, 82, 84, 82
+O:  82, 84, 83, 82, 84, 85, 84, 81, 83, 83, 83, 82, 82, 84, 82
+DECISION: Norte (mayor distancia disponible)
+MOVIMIENTO: Avanzar recto
+
+[PASO 2 - BIFURCACION: Este tiene mayor distancia, gira a la derecha]
+Tiempo: 15:38
+N: 689,766,677,511,401,331,233,160,140,134,136,134,135,131,134
+E: 128,132,143,133,120,118,751,712,750,722,709,700,702,708,699
+S:8191,8191, 438, 394, 394, 409, 385, 373, 419, 436, 428, 430, 397, 426, 434
+O:  79,135,111,108, 92, 94,  99,104,100,109,107,107,105,107,108
+DECISION: Este (mayor distancia, Norte se cierra)
+MOVIMIENTO: Desplazamiento lateral derecha (omnidireccional)
+
+[PASO 3 - PASILLO ESTE: Sigue avanzando hacia el Este]
+Tiempo: 15:40
+N: 141,141,142,144,142,144,138,141,141,141,142,110, 95,100,101
+E: 724,732,734,722,722,743,731,730,738,731,708,622,432,421,432
+S: 408,424,420,417,433,414,435,431,441,405,454,219,104, 98,101
+O:  68, 69, 66, 68, 68, 67, 65, 70, 65, 67, 92,234,347,377,384
+DECISION: Este (sigue con mayor distancia)
+MOVIMIENTO: Sigue desplazamiento lateral derecha
+
+[PASO 4 - GIRO SUR: Sur disponible, Oeste bloqueado (venia de ahi)]
+Tiempo: 15:41
+N:  96, 98, 96, 96, 96, 96, 99, 95,100, 97, 97, 97, 98,100, 97
+E: 429,430,426,432,430,432,426,433,427,427,425,403,286,125,117
+S: 103,100,102,100,101, 99,100,100,103,100, 99,103,428,403,403
+O: 380,378,381,382,383,391,384,381,379,380,380,443,571,697,670
+DECISION: Sur (Norte y Este bloqueados, Oeste es origen)
+MOVIMIENTO: Retroceder
+
+[PASO 5 - PASILLO SUR: Detecta Oeste libre, se desplaza a la izquierda]
+Tiempo: 15:42
+N: 111,109,109,111,112,109,111,110,109,108,109,110,109,109,109
+E: 117,118,116,120,120,119,117,117,119,118,121,117,119,117,116
+S: 408,400,393,397,402,398,400,399,402,407,405,399,401,403,397
+O: 679,664,666,665,672,662,675,671,660,678,673,668,647,669,669
+DECISION: Oeste (mayor distancia, llega al cruce)
+MOVIMIENTO: Desplazamiento lateral izquierda (omnidireccional)
+
+[PASO 6 - DESPLAZAMIENTO OESTE: Detecta Sur, decide retroceder]
+Tiempo: 15:43
+N: 406,403,402,401,411,402,407,402,410,408,399,413,403,408,400
+E: 117,116,113,116,116,115,116,115,117,116,116,118,116,114,114
+S: 110,114,110,113,114,113,113,113,112,112,114,114,113,113,115
+O: 371,374,366,376,383,378,373,380,371,372,374,374,378,376,377
+DECISION: Sur (mayor distancia disponible desde nueva posicion)
+MOVIMIENTO: Retroceder
+
+[PASO 7 - PASILLO ESTE LARGO: Este con mucho espacio, va a la derecha]
+Tiempo: 15:45
+N: 321,339,266,628,617,619,623,616,624,626,625,618,626,614,612
+E: 978,974,1008,999,987,976,979,826,275,515,705,794,701,909,939
+S: 123,121,121,125,123,120,124,123,122,122,124,123,122,123,122
+O:  82, 84, 86, 85, 86, 87, 84, 84, 83, 86, 86, 84, 84, 83, 86
+DECISION: Este (distancia ~1000mm, pasillo largo)
+MOVIMIENTO: Desplazamiento lateral derecha
+
+[PASO 8 - GIRANDO HACIA NORTE: Norte libre, decide avanzar recto]
+Tiempo: 15:47
+N:  72, 73, 70, 69, 72, 73, 64, 55, 50, 48, 49, 50, 64,102,101
+E: 745,739,230,156,753,646,632,657,691,698,700,144,230,689,689
+S: 130,127,130,131,131,125,126, 96, 97, 97, 95, 97, 95, 95, 94
+O: 392,387,390,391,392,486,508,455,453,450,453,453,442,454,454
+DECISION: Norte se acerca, Este sigue libre pero Norte prioridad
+MOVIMIENTO: Combinacion derecha + avance
+
+[PASO 9 - AVANZANDO NORTE: Norte con gran distancia, sigue recto]
+Tiempo: 15:48
+N: 637,635,636,635,643,624,652,637,645,642,622,646,632,641,639
+E:  80,288,284,288,288,283,284,288,280,288,284,286,284,287,287
+S: 136,136,138,137,135,135,137,135,136,133,137,136,133,135,135
+O: 795,804,789,780,795,821,778,809,803,803,794,790,792,809,791
+DECISION: Norte (mayor distancia ~640mm)
+MOVIMIENTO: Avanzar recto
+
+[PASO 10 - CRUCE COMPLEJO: Espacios multiples, Norte preferido]
+Tiempo: 15:50
+N: 388,480,344,456,524,558,596,617,603,594,590,606,602,605,612
+E: 310, 97,111,127,111,111,120,120,124,122,129,126,128,125,125
+S: 538,569,510,417,424,434,415,412,435,421,427,415,411,418,424
+O: 249,388,305,511,560,573,544,542,544,539,540,530,531,526,540
+DECISION: Norte (aunque hay otras opciones, Norte es preferido)
+MOVIMIENTO: Avanzar recto
+
+[PASO 11 - SALIDA: Este libre, gira a la derecha para salir]
+Tiempo: 15:51
+N: 101, 99, 95, 98, 99, 98, 97, 98, 99, 98, 97, 96, 98, 97, 96
+E: 463,458,465,472,462,446,462,465,471,457,464,461,459,449,457
+S: 542,546,552,558,558,561,563,573,553,541,550,564,550,635,561
+O: 235,232,238,231,231,234,230,230,232,232,235,229,233,227,221
+DECISION: Este (Norte bloqueado, Este es la salida)
+MOVIMIENTO: Desplazamiento lateral derecha hasta salir
+
+=============================================================
+RESUMEN DECISIONES DEL RECORRIDO:
+
+Paso  1: N=690  E=127  S=82   O=82   -> Norte  (max distancia)
+Paso  2: N=140  E=720  S=400  O=100  -> Este   (bifurcacion, giro lateral)
+Paso  3: N=141  E=730  S=430  O=68   -> Este   (sigue pasillo)
+Paso  4: N=96   E=430  S=380  O=600  -> Sur    (retroceder, Oeste=origen)
+Paso  5: N=109  E=118  S=400  O=666  -> Oeste  (desplazamiento lateral)
+Paso  6: N=404  E=116  S=113  O=374  -> Sur    (retroceder)
+Paso  7: N=340  E=970  S=122  O=85   -> Este   (pasillo largo derecha)
+Paso  8: N=64   E=680  S=120  O=450  -> Norte  (Norte se abre, prioridad)
+Paso  9: N=638  E=284  S=135  O=798  -> Norte  (max distancia)
+Paso 10: N=580  E=120  S=430  O=530  -> Norte  (prioridad Norte sobre E y O)
+Paso 11: N=97   E=463  S=560  O=230  -> Este   (Norte cerrado, salida Este)
+
+=============================================================
+UMBRALES CALIBRADOS (de sesion anterior):
+  N: umbral pared = 551mm
+  E: umbral pared = 277mm
+  S: umbral pared = 300mm
+  O: umbral pared = 352mm
+
+PARAMETROS RED NEURONAL SUGERIDOS PARA ESTE LABERINTO:
+  MAX_DIST = 600mm (normalizacion)
+  SIGMA_GA = 35.0  (ancho gaussiana)
+  W_EXCIT  = 0.40  (excitacion lateral)
+  W_INHIB  = 0.60  (inhibicion opuesta)
+  TAU_NR   = 1.5s  (respuesta Naka-Rushton)
+=============================================================
